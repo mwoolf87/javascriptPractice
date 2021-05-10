@@ -157,7 +157,7 @@ console.log(jonas);
 console.log(jonas.length);
 console.log(jonas[4][0]); // accesses the array then the 0 index of the array which is 'Michael'
 
-// -- Extercise -- //
+// -- Exercise -- //
 const calcAge = function (birthYear) {
   return 2037 - birthYear;
 };
@@ -178,7 +178,7 @@ const ages = [
 ];
 console.log(ages);
 */
-
+/*
 const friends = ["Michael", "Steven", "Peter"];
 // --- add elements -- //
 const newFriend = friends.push("Jay"); // adds the string 'Jay' to the end of an array. this will mutate the existing array.
@@ -195,3 +195,47 @@ console.log(friends);
 
 friends.shift(); // removes the first element in an array.
 console.log(friends);
+
+console.log(friends.indexOf("Steven")); // returns the index of the element requested. In this case, Steven is the 1 index of the array.
+
+console.log(friends.indexOf("Bob")); // if an element does not exist in an array then is will return -1.
+
+console.log(friends.includes("Steven")); // includes returns true or false if an element exists in an array. Steven returns true, while bob returns false, since he does not exist in the array. its important to note that includes uses strict equality.
+console.log(friends.includes("Bob"));
+*/
+
+// ------ Coding Challenge 2 ------ //
+/*
+const calcTip = bill => {
+  if (bill <= 300 && bill >= 50) {
+    return bill * 0.15;
+  } else {
+    return bill * 0.2;
+  }
+};
+
+const bills = [125, 555, 44];
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])]; // using bracket notation to use the calTip function on the specified index
+const tips2 = bills.forEach(bill => {
+  console.log(calcTip(bill));
+}); // using the .forEach() method on logging each tip value
+console.log(bills, tips);
+*/
+
+// ------------- OBJECTS ------------- //
+// Objects left side is the key, right side is the value, known as a key-value pair. Keys are also known as properties, in the example below jonas has 5 properties.
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  age: 2037 - 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"]
+};
+
+// to access the properties above, we use either . < dot notation, or bracket notation
+
+console.log(jonas.lastName); // returns 'Schmedtmann' in dot notation, we have to use the final property name
+console.log(jonas["lastName"]); // returns 'Schmedtmann' in bracket notation, we have to use the computed property name
+const nameKey = "Name";
+console.log(jonas["first" + nameKey]);
+console.log(jonas["last" + nameKey]);
