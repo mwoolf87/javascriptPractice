@@ -224,18 +224,40 @@ console.log(bills, tips);
 
 // ------------- OBJECTS ------------- //
 // Objects left side is the key, right side is the value, known as a key-value pair. Keys are also known as properties, in the example below jonas has 5 properties.
-const jonas = {
-  firstName: "Jonas",
-  lastName: "Schmedtmann",
-  age: 2037 - 1991,
-  job: "teacher",
-  friends: ["Michael", "Peter", "Steven"]
-};
+// const jonas = {
+//   firstName: "Jonas",
+//   lastName: "Schmedtmann",
+//   age: 2037 - 1991,
+//   job: "teacher",
+//   friends: ["Michael", "Peter", "Steven"]
+// };
 
 // to access the properties above, we use either . < dot notation, or bracket notation
 
-console.log(jonas.lastName); // returns 'Schmedtmann' in dot notation, we have to use the final property name
-console.log(jonas["lastName"]); // returns 'Schmedtmann' in bracket notation, we have to use the computed property name
-const nameKey = "Name";
-console.log(jonas["first" + nameKey]);
-console.log(jonas["last" + nameKey]);
+// console.log(jonas.lastName); // returns 'Schmedtmann' in dot notation, we have to use the final property name
+// console.log(jonas["lastName"]); // returns 'Schmedtmann' in bracket notation, we have to use the computed property name
+// const nameKey = "Name";
+// console.log(jonas[`first${nameKey}`]); //jonas
+// console.log(jonas["last" + nameKey]); //Schmedtmann
+
+// Challenge
+//Jonas has 3 friends, and his best friend is called Michael
+// console.log(
+//   `${jonas.firstName} has ${jonas.friends.length} friends and his best friend is called ${jonas.friends[0]}`
+// );
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriversLicense: true,
+
+  calcAge(birthYear) {
+    return 2037 - this.birthYear;
+  }
+};
+
+console.log(jonas.calcAge());
+console.log(jonas["calcAge"](1991));
