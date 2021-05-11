@@ -254,10 +254,22 @@ const jonas = {
   friends: ["Michael", "Peter", "Steven"],
   hasDriversLicense: true,
 
-  calcAge(birthYear) {
-    return 2037 - this.birthYear;
+  //   calcAge(birthYear) {
+  //     return 2037 - this.birthYear;// this allows the developer to access the object property birthyear
+  //   }
+  calcAge() {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+  getSummary() {
+    return `${this.firstName} is a ${this.calcAge()}-year old ${
+      this.job
+    } and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
   }
 };
-
 console.log(jonas.calcAge());
-console.log(jonas["calcAge"](1991));
+console.log(jonas.getSummary());
+console.log(jonas.age);
+
+// console.log(jonas.calcAge());
+// console.log(jonas["calcAge"](1991));
