@@ -273,3 +273,33 @@ console.log(jonas.age);
 
 // console.log(jonas.calcAge());
 // console.log(jonas["calcAge"](1991));
+
+// ----- Challenge 3 ------//
+
+const mark = {
+  fullName: "Mark Miller",
+  mass: 78,
+  height: 1.69,
+  calcBmi() {
+    this.bmi = Math.round(this.mass / this.height ** 2);
+    return this.bmi;
+  }
+};
+const john = {
+  fullName: "John Smith",
+  mass: 192,
+  height: 1.95,
+  calcBmi() {
+    this.bmi = Math.round(this.mass / this.height ** 2);
+    return this.bmi;
+  }
+};
+
+mark.calcBmi();
+john.calcBmi();
+console.log(mark.bmi, john.bmi);
+if (mark.bmi > john.bmi) {
+  console.log(`${mark.fullName} has a higher BMI`);
+} else {
+  console.log(`${john.fullName} has a higher BMI than ${mark.fullName}`);
+}
