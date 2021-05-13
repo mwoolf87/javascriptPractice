@@ -245,7 +245,7 @@ console.log(bills, tips);
 // console.log(
 //   `${jonas.firstName} has ${jonas.friends.length} friends and his best friend is called ${jonas.friends[0]}`
 // );
-
+/*
 const jonas = {
   firstName: "Jonas",
   lastName: "Schmedtmann",
@@ -273,9 +273,9 @@ console.log(jonas.age);
 
 // console.log(jonas.calcAge());
 // console.log(jonas["calcAge"](1991));
-
+*/
 // ----- Challenge 3 ------//
-
+/*
 const mark = {
   fullName: "Mark Miller",
   mass: 78,
@@ -303,3 +303,92 @@ if (mark.bmi > john.bmi) {
 } else {
   console.log(`${john.fullName} has a higher BMI than ${mark.fullName}`);
 }
+*/
+//------------ The For Loop ----------- //
+
+//for loop keeps running while condition is true
+/*
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights rep ${rep}`);
+}
+
+const jonas = [
+  "Jonas",
+  "Schmed",
+  2037 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"]
+];
+const types = [];
+
+for (let i = 0; i < jonas.length; i++) {
+  //reading from jonas array
+  console.log(jonas[i], typeof jonas[i]);
+  // filling types array
+  //   types[i] = typeof jonas[i];
+  types.push(typeof jonas[i]);
+}
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+for (let i = 0; i < years.length; i++) {
+  ages.push(2037 - years[i]);
+}
+console.log(ages);
+
+// CONTINUE AND BREAK
+console.log("----ONLY STRINGS ----");
+//Continue
+for (let i = 0; i < jonas.length; i++) {
+  if (typeof jonas[i] !== "string") continue;
+  console.log(jonas[i], typeof jonas[i]);
+}
+//Break
+
+for (let i = 0; i < jonas.length; i++) {
+  if (typeof jonas[i] !== "number") break;
+  console.log(jonas[i], typeof jonas[i]);
+}
+*/
+const jonas = [
+  "Jonas",
+  "Schmed",
+  2037 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"]
+];
+// reverse for loop jonas.length -1 indicates the last element in the array
+/*
+for (let i = jonas.length - 1; i >= 0; i--) {
+  console.log(i, jonas[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`----- Starting exercise ${exercise} -----`);
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Exercise ${exercise}: Lifting weights rep ${rep}`);
+  }
+}
+*/
+
+// ---------------- CHALLENGE 4 --------------- //
+const bills = [22, 295, 176, 440, 37, 105, 10, 110, 86, 52];
+const tips = [];
+const totals = [];
+
+const calcTip = bill => {
+  if (bill <= 300 && bill >= 50) {
+    return bill * 0.15;
+  } else {
+    return bill * 0.2;
+  }
+};
+
+for (let i = 0; i < bills.length; i++) {
+  tips.push(calcTip(bills[i]));
+  totals.push(tips[i] + bills[i]);
+}
+
+console.log(tips);
+console.log(totals);
