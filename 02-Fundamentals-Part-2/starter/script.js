@@ -372,6 +372,19 @@ for (let exercise = 1; exercise < 4; exercise++) {
 }
 */
 
+// while loop
+/*
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) {
+    console.log("Loop is about to end...");
+  }
+}
+
 // ---------------- CHALLENGE 4 --------------- //
 const bills = [22, 295, 176, 440, 37, 105, 10, 110, 86, 52];
 const tips = [];
@@ -386,9 +399,11 @@ const calcTip = bill => {
 };
 
 for (let i = 0; i < bills.length; i++) {
-  tips.push(calcTip(bills[i]));
-  totals.push(tips[i] + bills[i]);
+  const tip = calcTip(bills[i]);
+  tips.push(tip);
+  totals.push(tip + bills[i]);
 }
-
+console.log(bills);
 console.log(tips);
 console.log(totals);
+*/
